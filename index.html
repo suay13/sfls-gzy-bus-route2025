@@ -357,12 +357,12 @@
     
     // 初始化地图 (手机端默认视野稍微拉近)
     const map = L.map('map').setView(SCHOOL_COORDS, 10.8);
-    // OpenStreetMap 中文版 - 颜色素雅，地名中文，稳定
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> 贡献者 | 中文地名',
-        maxZoom: 18,
+    // Stamen Toner 黑白地图 - 极简风格，线路最突出
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>',
+        subdomains: 'abcd',
         minZoom: 9,
-        subdomains: ['a', 'b', 'c']
+        maxZoom: 18
     }).addTo(map);
     
     // 学校红色五角星
