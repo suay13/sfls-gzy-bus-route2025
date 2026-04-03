@@ -357,11 +357,11 @@
     
     // 初始化地图 (手机端默认视野稍微拉近)
     const map = L.map('map').setView(SCHOOL_COORDS, 10.8);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB',
-        subdomains: 'abcd',
+    L.tileLayer('https://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+        attribution: '&copy; <a href="https://www.amap.com/">高德地图</a>',
         maxZoom: 18,
-        minZoom: 9
+        minZoom: 9,
+        subdomains: ['webrd01', 'webrd02', 'webrd03', 'webrd04']
     }).addTo(map);
     
     // 学校红色五角星
