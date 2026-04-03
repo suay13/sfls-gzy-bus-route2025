@@ -376,21 +376,17 @@
     });
     L.marker([22.780418, 113.887365], { icon: metroIcon, zIndexOffset: 400 })
     .addTo(map)
-    .bindPopup('<b>🚉 公明广场站</b><br>深圳地铁6号线<br>距学校约2公里');
+    .bindPopup('<b>🚇 公明广场站</b><br>深圳地铁6号线<br>距学校约2公里');
     // 添加新庄地铁站（在建中）标记
-const underConstructionIcon = L.divIcon({
-    html: '<div style="font-size:24px; color:#ff9800; text-shadow:0 0 2px white; opacity:0.9;">🚧🚉</div>',
-    iconSize: [28, 28],
-    className: 'metro-station-icon',
-    popupAnchor: [0, -10]
-});
+    const underConstructionIcon = L.divIcon({
+        html: '<div style="font-size:24px; color:#ff9800; text-shadow:0 0 2px white; opacity:0.9;">🚧🚉</div>',
+        iconSize: [24, 24],
+        className: 'metro-station-icon',
+        popupAnchor: [0, -10]
+    });
     L.marker([22.769291, 113.897882], { icon: underConstructionIcon, zIndexOffset: 400 })
     .addTo(map)
-    .bindPopup(`
-        <b>新庄站（在建中）</b><br>
-        🚇 深圳地铁13号线（预计2026年内开通）<br>
-        📍 距离学校约1.1公里
-    `);
+    .bindPopup('<b>🚇 新庄站（在建中）</b><br>深圳地铁13号线（预计2026年内开通）<br>距离学校约1.1公里');
     let stationMarkers = new Map();
     let stationLabelMarkers = new Map();
     let currentLines = [];
