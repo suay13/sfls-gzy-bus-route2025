@@ -367,7 +367,17 @@
     // 学校红色五角星
     const schoolIcon = L.divIcon({ html: '<div style="font-size:34px; color:#e34234; text-shadow:0 0 4px white; line-height:1;">★</div>', iconSize: [34,34], className: 'custom-school-divicon', popupAnchor: [0,-15] });
     L.marker(SCHOOL_COORDS, { icon: schoolIcon, zIndexOffset: 500 }).addTo(map).bindPopup(`<b>🏫 ${SCHOOL_NAME}</b><br>📍 光明区`).openPopup();
-    
+    // 添加公明广场地铁站标记
+    const metroIcon = L.divIcon({
+        html: '<div style="font-size:24px; color:#0078d7; text-shadow:0 0 2px white;">🚉</div>',
+        iconSize: [24, 24],
+        className: 'metro-station-icon',
+        popupAnchor: [0, -10]
+    });
+    L.marker([22.7640, 113.8895], { icon: metroIcon, zIndexOffset: 400 })
+    .addTo(map)
+    .bindPopup('<b>🚉 公明广场站</b><br>深圳地铁6号线<br>距学校约2公里');
+
     let stationMarkers = new Map();
     let stationLabelMarkers = new Map();
     let currentLines = [];
