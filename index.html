@@ -357,10 +357,10 @@
     
     // 初始化地图 (手机端默认视野稍微拉近)
     const map = L.map('map').setView(SCHOOL_COORDS, 10.8);
-    /// 高德地图 - 精简路网图（纯灰白背景，只显示道路和地名，稳定版）
-    L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
-        attribution: '&copy; <a href="https://www.amap.com/">高德地图</a> | 深外高中园通学巴士',
-        subdomains: ['1', '2', '3', '4'],
+    // Stamen Toner 黑白地图 - 极简风格，国内稳定源
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> & CartoDB',
+        subdomains: 'abcd',
         maxZoom: 18,
         minZoom: 9
     }).addTo(map);
