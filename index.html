@@ -369,16 +369,7 @@
     // 学校红色五角星
     const schoolIcon = L.divIcon({ html: '<div style="font-size:34px; color:#e34234; text-shadow:0 0 4px white; line-height:1;">★</div>', iconSize: [34,34], className: 'custom-school-divicon', popupAnchor: [0,-15] });
     L.marker(SCHOOL_COORDS, { icon: schoolIcon, zIndexOffset: 500 }).addTo(map).bindPopup(`<b>🏫 ${SCHOOL_NAME}</b><br>📍 光明区`).openPopup();
-    // 添加公明广场地铁站标记
-    const metroIcon = L.divIcon({
-        html: '<div style="font-size:14px; color:#0078d7; background:rgba(255,255,255,0.8); border-radius:12px; padding:2px 4px; white-space:nowrap;">🚉 公明广场</div>',
-        iconSize: [null, 20],
-        className: 'metro-station-icon',
-        popupAnchor: [0, -10]
-    });
-    L.marker([22.780579, 113.887276], { icon: metroIcon, zIndexOffset: 400 })
-        .addTo(map)
-        .bindPopup('<b>🚉 公明广场站</b><br>深圳地铁6号线<br>距学校约2公里');
+
     // 添加新庄地铁站（在建中）标记
     const underConstructionIcon = L.divIcon({
         html: '<div style="font-size:12px; color:#ff9800; background:rgba(255,255,255,0.8); border-radius:12px; padding:2px 4px; white-space:nowrap;">🚧🚉 新庄站(在建)</div>',
@@ -392,8 +383,18 @@
             <b>🚧 新庄站（在建中）</b><br>
             🚇 深圳地铁13号线<br>
             📅 预计2026年开通<br>
-            📍 距离学校约1.1公里
+            📍 距离学校约1.3公里
             `);
+    // 添加公明广场地铁站标记
+    const metroIcon = L.divIcon({
+        html: '<div style="font-size:14px; color:#0078d7; background:rgba(255,255,255,0.95); border-radius:14px; padding:2px 4px; white-space:nowrap;">🚉 公明广场</div>',
+        iconSize: [null, 20],
+        className: 'metro-station-icon',
+        popupAnchor: [0, -10]
+    });
+    L.marker([22.780579, 113.887276], { icon: metroIcon, zIndexOffset: 400 })
+        .addTo(map)
+        .bindPopup('<b>🚉 公明广场站</b><br>深圳地铁6号线<br>距学校约2公里');
     let stationMarkers = new Map();
     let stationLabelMarkers = new Map();
     let currentLines = [];
